@@ -1,7 +1,9 @@
 # README
 
 Versión 0.02.
+
 log: 0.01 versión inicial.
+
 log: 0.02 (P. Sobral 2025-05-16) se agregan u y v en los resultados.
 
 Realizó: Pablo M. Barral, para Tecnología del Calor. 
