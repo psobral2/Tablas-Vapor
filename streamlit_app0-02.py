@@ -296,6 +296,7 @@ s_vap = [PropsSI("S", "T", T, "Q", 1, "Water") / 1000 for T in Tsat]  # kJ/kg.K
 T_C = Tsat - 273.15  # Convertir a °C para mostrar
 
 # Punto del usuario
+if t is not None:
 s_user = s # kJ/kg.K
 T_user = t # °C
 
@@ -312,7 +313,7 @@ ax.grid(True)
 ax.legend()
 
 # Mostrar en Streamlit
-if t is not None: st.pyplot(fig)
+st.pyplot(fig)
 
 # Separador
 #st.markdown("---")
