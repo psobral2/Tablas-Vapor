@@ -7,7 +7,9 @@ log: 0.01 versión inicial.
 log: 0.02 (P. Sobral 2025-05-16) se agregan u y v en los resultados.
 
 Realizó: Pablo M. Barral, para Tecnología del Calor. 
+
 Fecha: 2024-06-06
+
 Contacto: pbarral@fi.uba.ar.
 
 Esta es una versión beta. Work in progress.
