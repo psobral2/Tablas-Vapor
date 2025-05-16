@@ -127,7 +127,7 @@ st.sidebar.write("Ampliado por P. Sobral (psobral@fi.uba.ar).")
 st.sidebar.write("Versión: 0.02.")
 st.sidebar.write("Contacto: pbarral@fi.uba.ar.")
 st.sidebar.write("Powered by CoolProp.")
-st.sidebar.markdown("[Readme.md](https://github.com/PabloMBarral/apps/blob/850f68ccf322553bd7eedfdf585b52ca7c1260de/README.md)")
+st.sidebar.markdown("[Readme.md](https://github.com/psobral2/Tablas-Vapor/blob/main/README.md)")
 
 
 if option == 't y p':
@@ -289,4 +289,4 @@ elif option == 't y s':
 # Separador
 #st.markdown("---")
 # Texto adicional
-#st.write("Desarrollado por Pablo M. Barral para **Tecnología del Calor**. Ampliado por P. Sobral (psobral@fi.uba.ar). Versión: 0.02. Contacto: pbarral@fi.uba.ar. Powered by CoolProp. Ver [Readme.md](https://github.com/PabloMBarral/apps/blob/850f68ccf322553bd7eedfdf585b52ca7c1260de/README.md) en Github.")
+#st.write("Desarrollado por Pablo M. Barral para **Tecnología del Calor**. Ampliado por P. Sobral (psobral@fi.uba.ar). Versión: 0.02. Contacto: pbarral@fi.uba.ar. Powered by CoolProp. Ver [Readme.md](https://github.com/psobral2/Tablas-Vapor/blob/main/README.md) en Github.")
