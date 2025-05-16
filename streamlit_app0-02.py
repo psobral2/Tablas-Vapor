@@ -103,7 +103,8 @@ def calcular_propiedades(desde, **kwargs):
 
         # Devolver todas las propiedades calculadas
         return t, p, v, u, h, s, x
-
+        st.session_state['calculado'] = True
+        
     except Exception as e:
         st.error(f"Error en el cálculo: {e}")
         return None, None, None, None, None, None, None
@@ -289,7 +290,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from CoolProp.CoolProp import PropsSI
 
-if t is not None:
+if st.session_state.get('calculado', False):
     # Crear curva de saturación para agua
     Tsat = np.linspace(273.15, 647.096, 500)  # Desde 0°C a punto crítico
     s_liq = [PropsSI("S", "T", T, "Q", 0, "Water") / 1000 for T in Tsat]  # kJ/kg.K
