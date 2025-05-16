@@ -297,7 +297,7 @@ T_C = Tsat - 273.15  # Convertir a °C para mostrar
 
 # Punto del usuario
 s_user = s / 1000  # kJ/kg.K
-T_user = T - 273.15  # °C
+T_user = t - 273.15  # °C
 
 # Graficar
 fig, ax = plt.subplots()
