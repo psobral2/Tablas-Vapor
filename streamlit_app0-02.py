@@ -146,7 +146,7 @@ if option == 't y p':
 
         if t is not None:
             st.write(f"Resultados a {t:.2f} °C y {p:.2f} bar(a):")
-            st.write(f"Volumen específico: {v:.2f} m³/kg")
+            st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entalpía: {h:.2f} kJ/kg")
             st.write(f"Entropía: {s:.4f} kJ/(kg·K)")
@@ -170,7 +170,7 @@ elif option == 'p y h':
         if t is not None:
             st.write(f"Resultados a {h:.2f} kJ/kg y {p:.2f} bar(a):")
             st.write(f"Temperatura: {t:.2f} °C")
-            st.write(f"Volumen específico: {v:.2f} m³/kg")
+            st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entropía: {s:.4f} kJ/(kg·K)")
             st.write(f"Título: {x:.2f}")
@@ -193,7 +193,7 @@ elif option == 'h y s':
             st.write(f"Resultados a {h:.2f} kJ/kg y {s:.4f} kJ/(kg·K):")
             st.write(f"Temperatura: {t:.2f} °C")
             st.write(f"Presión: {p:.2f} bar(a)")
-            st.write(f"Volumen específico: {v:.2f} m³/kg")
+            st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Título: {x:.2f}")
         else:
@@ -213,7 +213,7 @@ elif option == 'p y x':
         if t is not None:
             st.write(f"Resultados a {p:.2f} bar(a) y {x:.2f}:")
             st.write(f"Temperatura: {t:.2f} °C")
-            st.write(f"Volumen específico: {v:.2f} m³/kg")
+            st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entalpía: {h:.2f} kJ/kg")
             st.write(f"Entropía: {s:.4f} kJ/(kg·K)")
@@ -235,7 +235,7 @@ elif option == 't y x':
         if t is not None:
             st.write(f"Resultados a {t:.2f} °C y {x:.2f}:")
             st.write(f"Presión: {p:.2f} bar(a)")
-            st.write(f"Volumen específico: {v:.2f} m³/kg")
+            st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entalpía: {h:.2f} kJ/kg")
             st.write(f"Entropía: {s:.4f} kJ/(kg·K)")
@@ -257,7 +257,7 @@ elif option == 'p y s':
         if t is not None:
             st.write(f"Resultados a {p:.2f} bar(a) y {s:.4f} kJ/(kg·K):")
             st.write(f"Temperatura: {t:.2f} °C")
-            st.write(f"Volumen específico: {v:.2f} m³/kg")
+            st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entalpía: {h:.2f} kJ/kg")
             st.write(f"Título: {x:.2f}")
@@ -278,7 +278,7 @@ elif option == 't y s':
         if t is not None:
             st.write(f"Resultados a {t:.2f} °C y {s:.4f} kJ/(kg·K):")
             st.write(f"Presión: {p:.2f} bar(a)")
-            st.write(f"Volumen específico: {v:.2f} m³/kg")
+            st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entalpía: {h:.2f} kJ/kg")
             st.write(f"Título: {x:.2f}")
