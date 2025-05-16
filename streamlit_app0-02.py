@@ -312,7 +312,7 @@ ax.grid(True)
 ax.legend()
 
 # Mostrar en Streamlit
-st.pyplot(fig)
+if t is not None: st.pyplot(fig)
 
 # Separador
 #st.markdown("---")
