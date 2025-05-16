@@ -289,31 +289,31 @@ import matplotlib.pyplot as plt
 import numpy as np
 from CoolProp.CoolProp import PropsSI
 
-# Crear curva de saturación para agua
-Tsat = np.linspace(273.15, 647.096, 500)  # Desde 0°C a punto crítico
-s_liq = [PropsSI("S", "T", T, "Q", 0, "Water") / 1000 for T in Tsat]  # kJ/kg.K
-s_vap = [PropsSI("S", "T", T, "Q", 1, "Water") / 1000 for T in Tsat]  # kJ/kg.K
-T_C = Tsat - 273.15  # Convertir a °C para mostrar
-
-# Punto del usuario
 if t is not None:
-s_user = s # kJ/kg.K
-T_user = t # °C
-
-# Graficar
-fig, ax = plt.subplots()
-ax.plot(s_liq, T_C, label="Líquido saturado", color="blue")
-ax.plot(s_vap, T_C, label="Vapor saturado", color="red")
-ax.plot(s_user, T_user, "ko", label="Punto ingresado")  # Punto del usuario
-
-ax.set_xlabel("Entropía específica [kJ/kg·K]")
-ax.set_ylabel("Temperatura [°C]")
-ax.set_title("Diagrama T–s del agua")
-ax.grid(True)
-ax.legend()
-
-# Mostrar en Streamlit
-st.pyplot(fig)
+    # Crear curva de saturación para agua
+    Tsat = np.linspace(273.15, 647.096, 500)  # Desde 0°C a punto crítico
+    s_liq = [PropsSI("S", "T", T, "Q", 0, "Water") / 1000 for T in Tsat]  # kJ/kg.K
+    s_vap = [PropsSI("S", "T", T, "Q", 1, "Water") / 1000 for T in Tsat]  # kJ/kg.K
+    T_C = Tsat - 273.15  # Convertir a °C para mostrar
+    
+    # Punto del usuario
+    s_user = s # kJ/kg.K
+    T_user = t # °C
+    
+    # Graficar
+    fig, ax = plt.subplots()
+    ax.plot(s_liq, T_C, label="Líquido saturado", color="blue")
+    ax.plot(s_vap, T_C, label="Vapor saturado", color="red")
+    ax.plot(s_user, T_user, "ko", label="Punto ingresado")  # Punto del usuario
+    
+    ax.set_xlabel("Entropía específica [kJ/kg·K]")
+    ax.set_ylabel("Temperatura [°C]")
+    ax.set_title("Diagrama T–s del agua")
+    ax.grid(True)
+    ax.legend()
+    
+    # Mostrar en Streamlit
+    st.pyplot(fig)
 
 # Separador
 #st.markdown("---")
