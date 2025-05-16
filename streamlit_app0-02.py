@@ -296,8 +296,8 @@ s_vap = [PropsSI("S", "T", T, "Q", 1, "Water") / 1000 for T in Tsat]  # kJ/kg.K
 T_C = Tsat - 273.15  # Convertir a °C para mostrar
 
 # Punto del usuario
-s_user = s / 1000  # kJ/kg.K
-T_user = t - 273.15  # °C
+s_user = s # kJ/kg.K
+T_user = t # °C
 
 # Graficar
 fig, ax = plt.subplots()
