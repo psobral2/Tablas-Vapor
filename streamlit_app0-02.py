@@ -2,7 +2,7 @@ import streamlit as st
 import CoolProp.CoolProp as cp
 
 # Título de la aplicación
-st.subheader("Tecnología del Calor")
+st.subheader("Tecnología del Calor - Termodinámica y Máquinas Térmicas")
 st.title("💧 Calculador de propiedades del agua")
 # Separador
 st.markdown("---")
