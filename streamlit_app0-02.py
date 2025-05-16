@@ -150,7 +150,7 @@ if option == 't y p':
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entalpía: {h:.2f} kJ/kg")
             st.write(f"Entropía: {s:.4f} kJ/(kg·K)")
-            st.write(f"Título: {x:.2f}")
+            st.write(f"Título: {x:.4f}")
         else:
             st.write(f"Revisá que sean coherentes los valores ingresados, y volvé a intentarlo.")
 
@@ -173,7 +173,7 @@ elif option == 'p y h':
             st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entropía: {s:.4f} kJ/(kg·K)")
-            st.write(f"Título: {x:.2f}")
+            st.write(f"Título: {x:.4f}")
         else:
             st.write(f"Revisá que sean coherentes los valores ingresados, y volvé a intentarlo.")
 
@@ -195,7 +195,7 @@ elif option == 'h y s':
             st.write(f"Presión: {p:.2f} bar(a)")
             st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
-            st.write(f"Título: {x:.2f}")
+            st.write(f"Título: {x:.4f}")
         else:
             st.write(f"Revisá que sean coherentes los valores ingresados, y volvé a intentarlo.")
 
@@ -211,7 +211,7 @@ elif option == 'p y x':
     if px_submit_button:
         t, p, v, u, h, s, x = calcular_propiedades('PX', p=p, x=x)
         if t is not None:
-            st.write(f"Resultados a {p:.2f} bar(a) y {x:.2f}:")
+            st.write(f"Resultados a {p:.2f} bar(a) y {x:.4f}:")
             st.write(f"Temperatura: {t:.2f} °C")
             st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
@@ -233,7 +233,7 @@ elif option == 't y x':
     if tx_submit_button:
         t, p, v, u, h, s, x = calcular_propiedades('TX', t=t, x=x)
         if t is not None:
-            st.write(f"Resultados a {t:.2f} °C y {x:.2f}:")
+            st.write(f"Resultados a {t:.2f} °C y {x:.4f}:")
             st.write(f"Presión: {p:.2f} bar(a)")
             st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
@@ -260,7 +260,7 @@ elif option == 'p y s':
             st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entalpía: {h:.2f} kJ/kg")
-            st.write(f"Título: {x:.2f}")
+            st.write(f"Título: {x:.4f}")
         else:
             st.write(f"Revisá que sean coherentes los valores ingresados, y volvé a intentarlo.")
 
@@ -281,7 +281,7 @@ elif option == 't y s':
             st.write(f"Volumen específico: {v:.4f} m³/kg")
             st.write(f"Energía interna: {u:.2f} kJ/kg")
             st.write(f"Entalpía: {h:.2f} kJ/kg")
-            st.write(f"Título: {x:.2f}")
+            st.write(f"Título: {x:.4f}")
         else:
             st.write(f"Revisá que sean coherentes los valores ingresados, y volvé a intentarlo.")
 
