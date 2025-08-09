@@ -5,6 +5,7 @@ Versión 0.03.
 log: 0.01 versión inicial.
 
 log: 0.02 (P. Sobral 2025-05-16) se agregan u y v en los resultados. Se agrega diagrama T-s
+
 log: 0.03 (P. Sobral 2025-08-09) se agregan opciones de cálculo desde presión y volumen específico y desde temperatura y volumen específico.
 
 Realizó: Pablo M. Barral, para Tecnología del Calor. 
