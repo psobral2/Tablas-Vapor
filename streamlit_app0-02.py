@@ -1,6 +1,12 @@
 import streamlit as st
 import CoolProp.CoolProp as cp
 
+# Inicializar claves en session_state
+if 't' not in st.session_state:
+    st.session_state['t'] = None
+if 's' not in st.session_state:
+    st.session_state['s'] = None
+
 # Título de la aplicación
 st.subheader("Tecnología del Calor - Termodinámica y Máquinas Térmicas")
 st.title("💧 Calculador de propiedades del agua")
@@ -102,26 +108,37 @@ def calcular_propiedades(desde, **kwargs):
             p = p_pascal / 1e5
 
         # Devolver todas las propiedades calculadas
+        st.session_state['t'] = t
+        st.session_state['s'] = s
         st.session_state['calculado'] = True
         return t, p, v, u, h, s, x
-        
-        
+
+
     except Exception as e:
         st.error(f"Error en el cálculo: {e}")
+        st.session_state['t'] = None
+        st.session_state['s'] = None
+        st.session_state['calculado'] = False
         return None, None, None, None, None, None, None
 
 
 
 # Formulario para seleccionar la opción
+def reset_calculado():
+    st.session_state['calculado'] = False
+
 st.sidebar.title("Seleccioná una opción:")
-option = st.sidebar.radio("", ("t y p", 
-                                "p y h",
-                                "h y s",
-                                "p y x",
-                                "t y x",
-                                "p y s",
-                                "t y s"
-                                ))
+option = st.sidebar.radio(
+    "",
+    ("t y p",
+     "p y h",
+     "h y s",
+     "p y x",
+     "t y x",
+     "p y s",
+     "t y s"),
+    on_change=reset_calculado,
+)
 
 # Texto adicional
 st.sidebar.write("Desarrollado por Pablo M. Barral para **Tecnología del Calor**.")
@@ -292,30 +309,33 @@ import numpy as np
 from CoolProp.CoolProp import PropsSI
 
 if st.session_state.get('calculado', False):
-    # Crear curva de saturación para agua
-    Tsat = np.linspace(273.15, 647.095, 500)  # Desde 0°C a punto crítico
-    s_liq = [PropsSI("S", "T", T, "Q", 0, "Water") / 1000 for T in Tsat]  # kJ/kg.K
-    s_vap = [PropsSI("S", "T", T, "Q", 1, "Water") / 1000 for T in Tsat]  # kJ/kg.K
-    T_C = Tsat - 273.15  # Convertir a °C para mostrar
-    
-    # Punto del usuario
-    s_user = s # kJ/kg.K
-    T_user = t # °C
-    
-    # Graficar
-    fig, ax = plt.subplots()
-    ax.plot(s_liq, T_C, label="Líquido saturado", color="blue")
-    ax.plot(s_vap, T_C, label="Vapor saturado", color="red")
-    ax.plot(s_user, T_user, "ko", label="Punto ingresado")  # Punto del usuario
-    
-    ax.set_xlabel("Entropía específica [kJ/kg·K]")
-    ax.set_ylabel("Temperatura [°C]")
-    ax.set_title("Diagrama T–s del agua")
-    ax.grid(True)
-    ax.legend()
-    
-    # Mostrar en Streamlit
-    st.pyplot(fig)
+    t_session = st.session_state.get('t')
+    s_session = st.session_state.get('s')
+    if t_session is not None and s_session is not None:
+        # Crear curva de saturación para agua
+        Tsat = np.linspace(273.15, 647.095, 500)  # Desde 0°C a punto crítico
+        s_liq = [PropsSI("S", "T", T, "Q", 0, "Water") / 1000 for T in Tsat]  # kJ/kg.K
+        s_vap = [PropsSI("S", "T", T, "Q", 1, "Water") / 1000 for T in Tsat]  # kJ/kg.K
+        T_C = Tsat - 273.15  # Convertir a °C para mostrar
+
+        # Punto del usuario
+        s_user = s_session  # kJ/kg.K
+        T_user = t_session  # °C
+
+        # Graficar
+        fig, ax = plt.subplots()
+        ax.plot(s_liq, T_C, label="Líquido saturado", color="blue")
+        ax.plot(s_vap, T_C, label="Vapor saturado", color="red")
+        ax.plot(s_user, T_user, "ko", label="Punto ingresado")  # Punto del usuario
+
+        ax.set_xlabel("Entropía específica [kJ/kg·K]")
+        ax.set_ylabel("Temperatura [°C]")
+        ax.set_title("Diagrama T–s del agua")
+        ax.grid(True)
+        ax.legend()
+
+        # Mostrar en Streamlit
+        st.pyplot(fig)
 
 # Separador
 #st.markdown("---")
