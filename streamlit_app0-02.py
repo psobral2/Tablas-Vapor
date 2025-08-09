@@ -293,7 +293,7 @@ from CoolProp.CoolProp import PropsSI
 
 if st.session_state.get('calculado', False):
     # Crear curva de saturación para agua
-    Tsat = np.linspace(273.15, 647.096, 500)  # Desde 0°C a punto crítico
+    Tsat = np.linspace(273.15, 647.095, 500)  # Desde 0°C a punto crítico
     s_liq = [PropsSI("S", "T", T, "Q", 0, "Water") / 1000 for T in Tsat]  # kJ/kg.K
     s_vap = [PropsSI("S", "T", T, "Q", 1, "Water") / 1000 for T in Tsat]  # kJ/kg.K
     T_C = Tsat - 273.15  # Convertir a °C para mostrar
